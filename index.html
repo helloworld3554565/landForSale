@@ -68,6 +68,13 @@ button[command = close]{
     align-items: center;
   justify-content: center;
   }
+  #sel {
+display:flex;
+flex-flow:row;
+  gap:10px;
+align-items: center;
+  justify-content: center; 
+    } 
    #areas {
     display: flex;
     flex-wrap: wrap;
@@ -275,14 +282,16 @@ margin:auto;
   <button id="close" commandfor="set3" command="close">❌</button>  
   </dialog>
 <dialog id="sell1">
+<header id="sel"> 
 <div id="dgsll">
   <span id="digisell"></span><span>🪙</span>
 </div> 
   <input type="range" value = "1" max="2" min="1" id="sellvalue" step="0.05">
 <div id="sjh"></div>
-<header id="sells">
+<div id="sells">
   <button id="sell2" commandfor="sell1" command="close">قبول</button>
  <button id="sell3" command="close" commandfor="sell1">رفض</button>
+</div>
 </header>
 </dialog>
 <section id="all">
