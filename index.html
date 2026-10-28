@@ -244,8 +244,7 @@ button[command = close]{
     <path d="M3 12h18M7 8l-4 4 4 4M17 8l4 4-4 4"/>
 </svg>
 </button>
-<button id="tadris" onclick="set3.showModal()">🏜</button>
-<button id="sibak" onclick="location.pathname='/soki.html'">💰</button>
+<button id="tadris" onclick="set3.showModal()">🏜</button> 
 </header> 
 </section>
   
@@ -303,18 +302,6 @@ button[command = close]{
 </section>
 <button id="sell">بيع</button>
 <script> 
-
-for (let index = 1; index < 13; index++) {
-  vtr.innerHTML +=`<span class="cntr">${index}</span>`
-}
-for (let index = -8; index < 9; index++) {
-  hvr.innerHTML +=`<span class="cntr1">${index}</span>`
-}
-  let reward = Number(localStorage.getItem("reward")) || 0;
-if (reward > 0) {
-  number.innerText = Number(number.innerText) + reward*10;
-  localStorage.removeItem("reward");
-}
 p = 60
 m = 60
 function colorf(a,b,c) {
@@ -427,6 +414,7 @@ if(house.style.background == "yellow"){
 }
 else if(house.style.background == "pink"){
   digisell.innerText =Math.round(m*p*0.8*1.3)
+  digisell.innerText = Number(digisell.innerText)-document.querySelectorAll(".hajr").length*50
 }
 else if(house.style.background == "red") {
   digisell.innerText =Math.round(m*p*0.8*1.5)
