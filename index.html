@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>لعبة بيع الاراضي</title>
 </head>
   <style>
   * {
@@ -81,7 +81,7 @@ button[command = close]{
     height: 30px;
     border: none;
     display: flex;
-    place-content:center;
+    align-items:center;
     place-items:center;
     background:rgba(255,255, 255, .5);
     border-radius: 20px;
@@ -221,14 +221,10 @@ button[command = close]{
     top: 0%;
     left: 30%;
 }
-#sjh span {
-  width: 50px;
-  height: 25px;
-  font-size: 15px;
-  padding: 10px;
-  background: hwb(230 45% 7%);
-  margin: auto;
-}
+#sjh {
+font-size:10px;
+margin:auto;
+} 
   </style>
 <body>
 <section id="sec">
@@ -409,28 +405,28 @@ btn3.addEventListener("click",()=>{
 sell.addEventListener("click",()=>{
   sell1.showModal()
 if(house.style.background == "yellow"){
-  digisell.innerText =Math.round(m*p*0.8*1.1)
+  digisell.innerText =Math.round(m*p*0.4*1.1)
       digisell.innerText = Number(digisell.innerText)-document.querySelectorAll(".hajr").length*50
 }
 else if(house.style.background == "pink"){
-  digisell.innerText =Math.round(m*p*0.8*1.3)
+  digisell.innerText =Math.round(m*p*0.4*1.3)
   digisell.innerText = Number(digisell.innerText)-document.querySelectorAll(".hajr").length*50
 }
 else if(house.style.background == "red") {
-  digisell.innerText =Math.round(m*p*0.8*1.5)
+  digisell.innerText =Math.round(m*p*0.4*1.5)
       digisell.innerText = Number(digisell.innerText)-document.querySelectorAll(".hajr").length*50
 }else if(house.style.background == "white"){
-  digisell.innerText =Math.round(m*p*0.8*1.9)
+  digisell.innerText =Math.round(m*p*0.4*1.9)
       digisell.innerText = Number(digisell.innerText)-document.querySelectorAll(".hajr").length*50
 }
 else if (m == 60 && p == 60){
   digisell.innerText = 0
 }
 else if(house.style.background == "purple"){
-  digisell.innerText = Math.round(m*p*1.1+800)
+  digisell.innerText = Math.round(m*p*0.4*2.5)
       digisell.innerText = Number(digisell.innerText)-document.querySelectorAll(".hajr").length*50
 }else {
-  digisell.innerText = Math.round(m*p*0.8)
+  digisell.innerText = Math.round(m*p*0.4)
       digisell.innerText = Number(digisell.innerText)-document.querySelectorAll(".hajr").length*50
 }
 let base = Number(digisell.innerText)
