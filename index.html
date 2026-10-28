@@ -1,312 +1,569 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
   <style>
-    body {
-      background:#00ffed;
-    }
-    * {
-      outline: none;
-    }
-    input{
-      width: 150px;
-      margin: auto;
-    }
-    #posts {
-      display: flex;
-      flex-flow: column;
-      gap: 5px;
-    }
-    button {
-     width: 75px;
-    border-radius: 20px;
-    aspect-ratio: 2/1;
-      background: black;
-      color:white;
-      margin: auto;
-    }
-
-    #all {
-      margin:30px 0;
-      width: 100%;
-      display: flex;
-      flex-flow:row;
-      gap:1px;
-    }
-    #post {
-      width:50%;
-      height: 150px;
-      background: #135095;
-      padding: 10px;
-      margin:auto;
-      display:none;
-      flex-flow: column;
-      gap: 10px;
-    }
-   #write {
-      width: 150px;
-      aspect-ratio: 2/1;
-     margin: auto;
-     
-    }
-    #inform {
-      margin: auto;
-     display: flex;
-      padding: 30px;
-      flex-flow:column;
-      gap:15px;
-      background-color:#ffffff;
-      width: 50%;
-      height: 150px;
-
-    }
-    #name { 
-        background:#123456;
-        border-radius: 20px;
-        display: flex; 
-        flex-flow: column;
-        place-self: center;
-    }
-    #xy {
-        background:none;
-      color: white;
-        width:250px; 
-      overflow-x: scroll;
-    }
-    #stor {
-        background: none;
-      color: white;
-    }
-    #btns {
-      display:flex;
-      flex-flow:row; 
-      gap:10px;
-    }
-    .like,#coment {
-      background: none;
-      border: none;
-   }
-    #btn1 {
-      width:100px;
-      aspect-ratio: 2/1;
-      margin-top: 10px;
-    }
-    #nameapp {
-          text-align: center;
-    font-size: 50px;
-    font-weight: 900;
-    background: linear-gradient(135deg, blue, green);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 8px;
-      font-family: Brush Script MT,cursive;
-    }
-    #phot {
-      width: 30px;
-      height: 30px;
-      border-radius:50%;
-    }
-    #yx {
-     background-color:rgba(red, green, blue, 1);
-      width: 50%;
-      display: flex;
-      flex-flow: row;
-      gap: 5px;
-      place-items: center;
-      
-      }
-    #postimg {
-      width:200px;
-      height: 300px;
-    margin: auto;
-    }
-  #postimg:focus {
-    zoom: 2;
-    position: relative;
-    top: 30px;
+  * {
+    margin: 0;
+    padding: 0;
   }
-  #message {
-    width: 200px;
+  body {
+      background: conic-gradient(from 0deg at 50% 50%,darkblue,blue,deepskyblue,skyblue,darkblue);
+      background-size: 100% 100vh;
+      animation: dal 4s infinite;
+    }
+  @keyframes dal {
+    25% {
+      background: conic-gradient(from 0deg at 50% 50%,blue,deepskyblue,skyblue,darkblue,blue);
+      background-size: 100% 100vh;
+    }
+    50% {
+      background: conic-gradient(from 0deg at 50% 50%,deepskyblue,skyblue,darkblue,blue,deepskyblue);
+      background-size: 100% 100vh;
+    }
+    75% {
+      background: conic-gradient(from 0deg at 50% 50%,skyblue,darkblue,blue,deepskyblue,skyblue);
+      background-size: 100% 100vh;
+    }
+  }
+ #all {
+   height: Calc(100vh-180px);
+   width:100vw;
+   background-color:#32d81d;
+   position:fixed;
+   overflow: hidden;
+   top: 180px;
+   left:0;
+   display: flex;
+   place-items: center;
+   align-items: center;
+   background-image: 
+    linear-gradient(to right, #000 1px, transparent 1px),
+    linear-gradient(to bottom, #000 1px, transparent 1px);
+  background-size: 30px 30px;
+ }
+button[command = close]{
+  background: none;
+  border: none;
+}
+#points {
+  width: 100px;
+  height:30px;
+  background: #12abff;
+  display: flex;
+  flex-flow: row-reverse;
+  gap: 5px;
+  border-radius: 20px;
+ place-content: center;
+  place-items: center;
+}
+  #chosec {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+   #areas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    }
+  button { 
+    width: 100px;
     height: 50px;
-    background: rgba( 55, 29, 255, .7);
-    place-content: center;
-    text-align: center;
+    background: white;
+    border-radius: 20px;
+  }
+  #color,#area,#tadris,#sibak{
+    width: 30px;
+    height: 30px;
+    border: none;
+    display: flex;
+    place-content:center;
+    place-items:center;
+    background:rgba(255,255, 255, .5);
+    border-radius: 20px;
+    font-size: 20px;
+  }
+  #sec {
+    display:flex;
+    flex-flow:row;
+    gap: 160px;
+  }
+  #settings {
+    width: 100px;
+    background: rgba(255, 255, 255, 0.5);
+    place-items: center;
+    display: flex;
+    flex-flow: column;
+    border-radius: 0 0 0 20px;
+    gap: 5px;
+  }
+  #xxx {
+   position: relative;
+  top: 110px;
+  }
+  #sell {
+    background:green;
     color: white;
     border-radius: 20px;
     position: fixed;
-    top: 400px;
-    left: 80px;
-    display: none;
+    bottom: 10px;
+    left: 10px;
   }
+  #dgsll {
+    background: #4e4e4e;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    font-size: 25px;
+    color: white;
+    width: 150px;
+    height: 70px;
+    margin: auto;
+  }
+  #house {
+    background: grey;
+    width: 60px;
+    height: 60px;
+    border: 2px ridge #000;
+      place-content: center;
+  text-align: center;
+  font-size: 10px;
+    touch-action: none;
+  position: absolute;
+    grid-template-columns: repeat(auto-fill, 30px);
+  grid-template-rows: repeat(auto-fill, 30px);
+  }
+  #color1,#color2,#color3,#color4,#color5 {
+    border: 1px #000 ridge;
+    border-radius: 20px;
+  }
+  #color1 {
+    background: yellow;
+  }
+  #color2 {
+    background:pink;
+  }  
+  #color3 {
+    background: red;
+    color: white;
+  } 
+  #color4 {
+    background: white;
+  }  
+  #color5 {
+    background: purple;
+    color: white;
+  } 
+  #vtr {
+    display: flex;
+    flex-flow: row;
+    gap: 25px;
+    align-items: center;
+    justify-content: flex-start; 
+}
+  #hvr {
+    display: flex;
+    flex-flow: column;
+    gap: 25px;
+    width: 331px;
+    height: 541px;
+    justify-content: center;
+    align-items: start;
+  }
+  .cntr,.cntr1 {
+    width: 5px;
+    height: 5px;
+    font-size: 7px;
+  }
+  dialog {
+    border: none;
+    width: 250px;
+    height: 125px;
+    margin: auto;
+  }
+  .hajr {
+    background:#83661b;
+    color:#fff;
+    width: 25%;
+    height: 25%;
+    border-radius:50%;
+    position: absolute;
+  }
+:nth-child(1 of .hajr){
+    top: 20%;
+    left: 10%;
+  }
+:nth-child(2 of .hajr){
+    top: 40%;
+    left: 10%;
+}
+:nth-child(3 of .hajr){
+    top: 30%;
+    left: 70%;
+}
+:nth-child(4 of .hajr){
+    top: 80%;
+    left: 20%;
+}
+:nth-child(5 of .hajr){
+    top: 80%;
+    left: 45%;
+}
+:nth-child(6 of .hajr){
+    top: 10%;
+    left: 10%;
+  }
+:nth-child(7 of .hajr){
+    top: 0%;
+    left: 30%;
+}
+#sjh span {
+  width: 50px;
+  height: 25px;
+  font-size: 15px;
+  padding: 10px;
+  background: hwb(230 45% 7%);
+  margin: auto;
+}
   </style>
 <body>
-  <div id="nameapp">tawasal</div>
-  <header id="all">
-     <div id="inform">
-    <input type="text" placeholder="username" id="nome">
-    <input type="password" placeholder="password" id="pword">
-    <input type="file" accept="image/*" name="" id="profile">
-    <button id="btn">دخول</button>
-  </div>
-  <div id="post">
-    <input type="file" name="" accept="image/*" id="sss">
-    <textarea id="write"></textarea>
-    <button id="btn1">نشر</button>
-  </div>
+<section id="sec">
+  <header id="points">
+    <span id="coin">🪙</span>
+    <span id="number">2500</span>
   </header>
- <section id="posts">
-   
- </section>
-<div id="message"></div>
-  <script>
-inform= document.getElementById("inform")
-nome=document.getElementById("nome")
-btn=document.getElementById("btn")
-write = document.getElementById("write")
-posts=document.getElementById("posts")
-post= document.getElementById("post")
-btn1=document.getElementById("btn1")
-pword=document.getElementById("pword") 
-   profile.addEventListener('change', function() {
-    const file = this.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        photopro = e.target.result;
-      };
-      reader.readAsDataURL(file);
-    }
-  }); 
- sss.addEventListener('change', function() {
-    const ffile = this.files[0];
-    if (ffile) {
-      const reader = new FileReader();
-      reader.onload = function(f) {
-        profimg = f.target.result;
-      };
-      reader.readAsDataURL(ffile);
-    }
-  }); 
-  let photopro
-  let profimg
-users=[]
-if(localStorage.nme != null) {
-  users=JSON.parse(localStorage.nme)
-}else {
-  users=[]
-}
-function notifi(msg) {
- message.innerHTML = msg
-message.style.display = "block"
-setTimeout(()=>{
-  message.style.display = "none"
-},2000)
-}
-btn.addEventListener("click",()=>{
-if (nome.value != "" && pword.value != "") {
-  post.style.display="flex"
-  inform.style.display="none"
-infuser={
-  arbi:photopro,
-  user:nome.value,
-  code:pword.value
-}
-  console.log(users)
-btn1.addEventListener("click",()=>{
-if (write.value != "") {
-  infuser.city = write.value
- infuser.pfimg= profimg
-  users.push(infuser)
+<header id="settings">
+<button id="color" onclick="set1.showModal()">🎨</button>
+<button id="area" onclick="set2.showModal()" >  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+       stroke="black" stroke-width="2.5"
+       stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 12h18M7 8l-4 4 4 4M17 8l4 4-4 4"/>
+</svg>
+</button>
+<button id="tadris" onclick="set3.showModal()">🏜</button>
+<button id="sibak" onclick="location.pathname='/soki.html'">💰</button>
+</header> 
+</section>
   
-localStorage.setItem("nme",JSON.stringify(users))  
-  shaw() 
+  <dialog id="set1">
+  <header id="chosec">
+    <button id="color1"><span>50🪙</span></button>
+    <button id="color2"><span>80🪙</span></button>
+    <button id="color3"><span>110🪙</span></button>
+    <button id="color4"><span>170🪙</span></button>
+    <button id="color5"><span>350🪙</span></button>
+  </header>
+  <button id="close" commandfor="set1" command="close">❌</button>  
+  </dialog>
+  <dialog id="set2">
+  <header id="areas">
+    <button id="area1">↕️<br><span>250🪙</span></button>
+    <button id="area2">↔️<br><span>500🪙</span></button>
+    <button id="area3">⬆️⬆️<br><span>950🪙</span></button>
+    <button id="area4">↔️↔️<br><span>1500🪙</span></button>
+  </header>
+ <button id="close" commandfor="set2" command="close">❌</button>   
+  </dialog>
+  <dialog id="set3">
+  <header id="etu">
+    <button id="btn1">🏜<br><span id="c">1000</span>🪙</button>
+    <button id="btn2">🏝<br><span id="dd">1700</span>🪙</button>
+    <button id="btn3">🏞<br><span id="dc">3000</span>🪙</button>
+  </header>
+  <button id="close" commandfor="set3" command="close">❌</button>  
+  </dialog>
+<dialog id="sell1">
+<div id="dgsll">
+  <span id="digisell"></span><span>🪙</span>
+</div> 
+  <input type="range" value = "1" max="2" min="1" id="sellvalue" step="0.05">
+<div id="sjh"></div>
+<header id="sells">
+  <button id="sell2" commandfor="sell1" command="close">قبول</button>
+ <button id="sell3" command="close" commandfor="sell1">رفض</button>
+</header>
+</dialog>
+<section id="all">
+        <div id="hvr"></div>
+     <div id="vtr"></div>
+    <header id="house">
+      <div id="ddd">4m<sup><small>2</small></sup></div>
+    <div class="hajr"></div>
+    <div class="hajr"></div>
+  <div class="hajr"> </div>
+  <div class="hajr"> </div>
+  <div class="hajr"></div>
+ <div class="hajr"></div>
+<div class="hajr"></div>
+    </header>
+</section>
+<button id="sell">بيع</button>
+<script> 
 
- function  shaw() {
-  table =''
-  for(i=0;i<users.length;i++){
+for (let index = 1; index < 13; index++) {
+  vtr.innerHTML +=`<span class="cntr">${index}</span>`
+}
+for (let index = -8; index < 9; index++) {
+  hvr.innerHTML +=`<span class="cntr1">${index}</span>`
+}
+  let reward = Number(localStorage.getItem("reward")) || 0;
+if (reward > 0) {
+  number.innerText = Number(number.innerText) + reward*10;
+  localStorage.removeItem("reward");
+}
+p = 60
+m = 60
+function colorf(a,b,c) {
+    if (Number(number.innerHTML) >= a) {
+      number.innerHTML = Number(number.innerHTML)-a
+      house.style.background = b
+      house.style.color = c
+    }
+}
+  area1.addEventListener("click",()=>{
+     if (Number(number.innerText >= 250)) {
+       number.innerText = Number(number.innerText)-250
+       house.style.height=`${p+=15}px`
+      ddd.innerHTML = `${((m/30)*(p/30)).toFixed(2)}m<sup><small>2</small></sup>`
+     }
+  })
+
+  area2.addEventListener("click",()=>{
+  if (Number(number.innerText >= 500)) {
+    number.innerText = Number(number.innerText)-500
+    house.style.width=`${m+=30}px`
+      ddd.innerHTML = `${((m/30)*(p/30)).toFixed(2)}m<sup><small>2</small></sup>`
+  }
+  })
+  
+  area3.addEventListener("click",()=>{
+    if (Number(number.innerText >= 950)) {
+       number.innerText = Number(number.innerText)-950
+       house.style.height=`${p+=30}px`
+      ddd.innerHTML = `${((m/30)*(p/30)).toFixed(2)}m<sup><small>2</small></sup>`
+     }
     
-    if(users[i].pfimg == undefined && users[i].arbi == undefined){
-     table += `<header id="name">
-    <div id="yx">
-    <svg width="30" height="30">
-  <circle cx="15" cy="15" r="15" fill="skyblue" />
-  </svg>
-    <h2 id="stor">${users[i].user}</h2>
-    </div>
-    <span id="xy">${users[i].city}</span>
-    <div id="btns">
-    <button class="like">🤍</button>
-    </div>
-    </header>` 
-    } else if (users[i].arbi == undefined ) {
-    table += `<header id="name">
-    <div id="yx">
-    <svg width="30" height="30">
-  <circle cx="15" cy="15" r="15" fill="skyblue" />
-  </svg>
-    <h2 id="stor">${users[i].user}</h2>
-    </div>
-    <span id="xy">${users[i].city}</span>
-    <img src="${users[i].pfimg}" id="postimg">
-    <div id="btns">
-    <button class="like">🤍</button>
-    </div>
-    </header>`
-    }else if (users[i].pfimg == undefined) {
-    table += `<header id="name">
-    <div id="yx">
-    <img src="${users[i].arbi}" id="phot">
-    <h2 id="stor">${users[i].user}</h2>
-    </div>
-    <span id="xy">${users[i].city}</span>
-    <button class="like">🤍</button>
-    </div>
-    </header>`
-  }
-    else {
-      table += `<header id="name">
-    <div id="yx">
-    <img src="${users[i].arbi}" id="phot">
-    <h2 id="stor">${users[i].user}</h2>
-    </div>
-    <span id="xy">${users[i].city}</span>
-    <img src="${users[i].pfimg}" id="postimg">
-    <div id="btns">
-    <button class="like">🤍</button>
-    </div>
-    </header>`
-    }
-  posts.innerHTML= table
+  })
+  area4.addEventListener("click",()=>{
+    if (Number(number.innerText >= 1500)) {
+    number.innerText = Number(number.innerText)-1500
+    house.style.width=`${m+=60}px`
+      ddd.innerHTML = `${((m/30)*(p/30)).toFixed(2)}m<sup><small>2</small></sup>`
+    }    
+  })
 
-  like = document.querySelectorAll(".like")
-  let i1 = 1
-  let c = 0
-like.forEach(bt=>{
-  bt.addEventListener("click",()=>{
-    c++
-  if (c%2 == 1) {
-    bt.innerHTML = `🩷${i1}`
-  } else {
-    bt.innerHTML = `🤍`
-  }     
+  d1 = 0
+  color1.addEventListener("click",()=>{
+    d1++
+  if (d1 == 1) {
+    colorf(50,"yellow","black")
+  }
+    
   })
+  d2 = 0
+  color2.addEventListener("click",()=>{
+    d2++
+  if (d2 == 1) {
+    colorf(80,"pink","black")
+  }
+    
+  })
+    d3 = 0
+  color3.addEventListener("click",()=>{
+    d3++
+  if (d3 == 1) {
+    colorf(110,"red","white")
+  }
+   //   وردي 80،احمر 110،ابيض 170،بنفسجي 350  
+  })
+    d4 = 0
+  color4.addEventListener("click",()=>{
+    d4++
+  if (d4 == 1) {
+    colorf(170,"white","black")
+  }
+    
+  })
+    d5 = 0
+  color5.addEventListener("click",()=>{
+    d5++
+  if (d5 == 1) {
+    colorf(350,"purple","white")
+  }
+  })
+btn1.addEventListener("click",()=>{
+  if (Number(number.innerText >= Number(c.innerText))) {
+
+    number.innerText = Number(number.innerText)-Number(c.innerText)
+  
+   all.style.backgroundColor="#cab533" 
+  } 
 })
-  }
-  }
-} else {
-notifi("يرجى كتابة منشور لا يقبل منشور فارغ")
+  btn2.addEventListener("click",()=>{
+  if (Number(number.innerText >= Number(dd.innerText))) {
+
+    number.innerText = Number(number.innerText)-Number(dd.innerText)
+  
+   all.style.backgroundColor="#f8e571" 
+  } 
+})
+btn3.addEventListener("click",()=>{
+  if (Number(number.innerText >= Number(dc.innerText))) {
+
+    number.innerText = Number(number.innerText)-Number(dc.innerText)
+  
+   all.style.backgroundColor="#37b020" 
+  } 
+})
+sell.addEventListener("click",()=>{
+  sell1.showModal()
+if(house.style.background == "yellow"){
+  digisell.innerText =Math.round(m*p*0.8*1.1)
+      digisell.innerText = Number(digisell.innerText)-document.querySelectorAll(".hajr").length*50
 }
- 
-  })
-} else {
-notifi("يرجى ادخال معلوماتك")
+else if(house.style.background == "pink"){
+  digisell.innerText =Math.round(m*p*0.8*1.3)
+}
+else if(house.style.background == "red") {
+  digisell.innerText =Math.round(m*p*0.8*1.5)
+      digisell.innerText = Number(digisell.innerText)-document.querySelectorAll(".hajr").length*50
+}else if(house.style.background == "white"){
+  digisell.innerText =Math.round(m*p*0.8*1.9)
+      digisell.innerText = Number(digisell.innerText)-document.querySelectorAll(".hajr").length*50
+}
+else if (m == 60 && p == 60){
+  digisell.innerText = 0
+}
+else if(house.style.background == "purple"){
+  digisell.innerText = Math.round(m*p*1.1+800)
+      digisell.innerText = Number(digisell.innerText)-document.querySelectorAll(".hajr").length*50
+}else {
+  digisell.innerText = Math.round(m*p*0.8)
+      digisell.innerText = Number(digisell.innerText)-document.querySelectorAll(".hajr").length*50
+}
+let base = Number(digisell.innerText)
+sellvalue.oninput=()=>{
+  if (m == 60 && p == 60) {
+    digisell.innerText= 0
+  } else {
+    digisell.innerText = (base*sellvalue.value).toFixed(2)
+  if (sellvalue.value >= 1.75) {
+    digisell.style.color = "red"
+    sellvalue.style.accentColor="red"
+   sjh.innerHTML='<small>السعر غالي جدا اريد تفاوض معك</small>'
+  let  setint=setInterval(()=>{
+    Mathra = Math.random()*2
+if(Mathra <= 1.75 && Mathra >= 1 ){
+      sellvalue.value = Mathra.toFixed(2)
+      digisell.innerText = (base*sellvalue.value).toFixed(2)
+      sellvalue.disabled = true
+}
+    },1000)
+    setTimeout(()=>{
+      clearInterval(setint)
+    },5000)
+  }else {
+    digisell.style.color="green"
+    sellvalue.style.accentColor="green"
+    sjh.innerHTML = ""
+  }
+  }
 }
   
-   })
-  </script>
+sell3.onclick = ()=>{
+  sellvalue.disabled = false
+  sellvalue.value = 1
+}
+
+sell2.onclick =()=>{
+sellvalue.disabled = false
+sellvalue.value = 1
+number.innerText = Number(number.innerText)+Number(digisell.innerText) 
+m = 60
+p = 60
+d1 = d2 = d3 = d4 = d5 = 0
+house.style.width = "60px"
+house.style.height = "60px"
+house.style.background="grey"
+ddd.innerHTML = "4m<sup><small>2</small></sup>"
+digisell.style.color="green"
+sellvalue.style.accentColor="green"
+house.innerHTML+='<div class="hajr"></div><div class="hajr"></div><div class="hajr"></div><div class="hajr"> </div><div class="hajr"></div><div class="hajr"></div><div class="hajr"></div>'
+hajr = document.querySelectorAll(".hajr")
+hajr.forEach(hjr =>{
+  hjr.onclick=()=>{
+    if (Number(number.innerText) >= 10) {
+      number.innerText = Number(number.innerText)-10
+      house.removeChild(hjr)
+
+    }
+  }
+})
+}
+})
+
+let dragging = false;
+let dx = 0, dy = 0;
+
+house.addEventListener("pointerdown", (e) => {
+  dragging = true;
+  dx = e.clientX - house.offsetLeft;  // المسافة من صباعك لركن الشكل
+  dy = e.clientY - house.offsetTop;
+  house.setPointerCapture(e.pointerId); // يفضل ماسك الشكل لو صباعك خرج منه
+});
+
+house.addEventListener("pointermove", (e) => {
+  if (!dragging) return;
+  house.style.left = (e.clientX - dx) + "px";
+  house.style.top  = (e.clientY - dy) + "px";
+if(house.offsetLeft <= 0){
+  all.style.borderLeftColor="red"
+  all.style.borderLeftStyle="solid"
+  all.style.borderLeftWidth = "2px"
+}else {
+  all.style.borderLeft = "none"
+}
+if(house.offsetLeft > 270){
+  all.style.borderRightColor="red"
+  all.style.borderRightStyle="solid"
+  all.style.borderRightWidth = "2px"
+}else {
+  all.style.borderRight = "none"
+  }
+  if(house.offsetTop <= 0){
+  all.style.borderTopColor="red"
+  all.style.borderTopStyle="solid"
+  all.style.borderTopWidth = "2px"
+}else {
+  all.style.borderTop = "none"
+  }
+  if(house.offsetTop >= 360){
+  all.style.borderBottomColor="red"
+  all.style.borderBottomStyle="solid"
+  all.style.borderBottomWidth = "2px"
+}else {
+  all.style.borderBottom = "none"
+  }
+});
+
+house.addEventListener("pointerup", () => {
+  dragging = false;
+});
+hajr = document.querySelectorAll(".hajr")
+hajr.forEach(hjr =>{
+  hjr.onclick=()=>{
+    if (Number(number.innerText) >= 10) {
+      number.innerText = Number(number.innerText)-10
+      house.removeChild(hjr)
+
+    }
+  }
+})
+</script>
+  
 </body>
-</html>
+                                                  </html>
