@@ -1,36 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <meta name="theme-color" content="blue">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Changa:wght@200..800&display=swap" rel="stylesheet">
+  <title>لعبة بيع الاراضي</title>
+
   <style>
   * {
     margin: 0;
     padding: 0;
+    font-family: 'Changa', sans-serif; 
+    
   }
   body {
-      background: conic-gradient(from 0deg at 50% 50%,darkblue,blue,deepskyblue,skyblue,darkblue);
-      background-size: 100% 100vh;
-      animation: dal 4s infinite;
+      background: #000;
     }
-  @keyframes dal {
-    25% {
-      background: conic-gradient(from 0deg at 50% 50%,blue,deepskyblue,skyblue,darkblue,blue);
-      background-size: 100% 100vh;
-    }
-    50% {
-      background: conic-gradient(from 0deg at 50% 50%,deepskyblue,skyblue,darkblue,blue,deepskyblue);
-      background-size: 100% 100vh;
-    }
-    75% {
-      background: conic-gradient(from 0deg at 50% 50%,skyblue,darkblue,blue,deepskyblue,skyblue);
-      background-size: 100% 100vh;
-    }
-  }
  #all {
-   height: Calc(100vh-180px);
+   height: Calc(100vh - 180px);
    width:100vw;
    background-color:#55ea44;
    position:fixed;
@@ -43,8 +33,17 @@
    background-image: 
     linear-gradient(to right, #000 1px, transparent 1px),
     linear-gradient(to bottom, #000 1px, transparent 1px);
-  background-size: 30px 30px;
+  background-size: 60px 60px;
  }
+#sells {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-flow: row;
+  gap: 80px;
+  align-items: center;
+  justify-content: center;
+}
 button[command = close]{
   background: none;
   border: none;
@@ -52,11 +51,12 @@ button[command = close]{
 #points {
   width: 100px;
   height:30px;
-  background: #12abff;
+  background:rgba(255, 255, 255, 0.2);
+  color: #fff;
   display: flex;
   flex-flow: row-reverse;
   gap: 5px;
-  border-radius: 20px;
+  border-radius: 0 20px 20px 0;
  place-content: center;
   place-items: center;
 }
@@ -79,10 +79,11 @@ button[command = close]{
     height: 50px;
     background: white;
     border-radius: 20px;
+    font-size: 12px;
   }
-  #color,#area,#tadris,#sibak{
-    width: 30px;
-    height: 30px;
+  #color,#area,#tadris{
+    width: 40px;
+    height: 40px;
     border: none;
     display: flex;
     place-content:center;
@@ -94,16 +95,18 @@ button[command = close]{
   #sec {
     display:flex;
     flex-flow:row;
-    gap: 160px;
+    gap: 100px;
   }
   #settings {
-    width: 100px;
+    width: 160px;
+    height: 50px;
     background: rgba(255, 255, 255, 0.5);
-    place-items: center;
     display: flex;
-    flex-flow: column;
+    flex-flow: row;
     border-radius: 0 0 0 20px;
-    gap: 5px;
+    align-items: center;
+  justify-content: center;
+    gap: 10px;
   }
   #sell {
     background:green;
@@ -134,8 +137,8 @@ button[command = close]{
   font-size: 10px;
     touch-action: none;
   position: absolute;
-    grid-template-columns: repeat(auto-fill, 30px);
-  grid-template-rows: repeat(auto-fill, 30px);
+    grid-template-columns: repeat(auto-fill, 60px);
+  grid-template-rows: repeat(auto-fill, 60px);
   }
   #color1,#color2,#color3,#color4,#color5 {
     border: 1px #000 ridge;
@@ -152,7 +155,7 @@ button[command = close]{
     color: white;
   } 
   #color4 {
-    background: white;
+    background: #42f12e;
   }  
   #color5 {
     background: purple;
@@ -181,9 +184,9 @@ button[command = close]{
     font-size: 7px;
   }
   dialog {
+    width: 90vw;
+    height: 200px;
     border: none;
-    width: 250px;
-    height: 125px;
     margin: auto;
   }
   .hajr {
@@ -222,131 +225,80 @@ button[command = close]{
     top: 0%;
     left: 30%;
 }
-    .all {
-      perspective:120vh;
-      width: 300px;
-      height: 700px;
-    }
-    #race {
-      background: #1e3a8a;
-      width: 200px;
-      height:1000px;
-      margin: auto;
-     display: flex;
-    transform: rotateX(100deg) rotateZ(180deg); 
-      flex-flow: row;
-      transform-style: preserve-3d;
-      gap: 10px;
-      
-    }
-   .m {
-     width:60px;
-     height: 120px;
-     z-index: 3;
-     position: absolute;
-     perspective: 300px;
-     top:0;
-   } 
-    #ff1 {
-      background-image:url('green.png');
-    transform: rotate(180deg);
-    background-size:60px 120px;
-    left: 10px;
-    }
-      #ff2 {
-      background-image:url('Grey.png');
-        transform: rotate(180deg);
-        background-size:60px 120px;
-        left: 140px;
-      }
-
-    #winner {
-      width: 100px;
-      height: 50px;
-      background: orange;
-      place-content: center;
-      text-align: center;
-      font-size: 20px;
-      margin: auto;
-      display: flex;
-      flex-flow:row-reverse;
-      align-items: center;
-  justify-content: center;
-    }
-    #pt1,#pt2 {
-      width: 40px;
-      height: 40px;
-    }
-    #pt1 {
-      background: gold;
-      border-inline-start: 1px solid #000;
-    }
-    #pt2 {
-      background: gold;
-      border-inline-end: 1px solid #000;
-    }
-    #endline {
-      width: 200px;
-      height:20px;
-      display: flex;
-      transform: rotateX(-60deg) rotateY(180deg);
-      flex-wrap: wrap;
-      gap: 0;
-      margin-top:1000px;
-    }
-    .w,.b {
-      place-content: center;
-      text-align: center;
-      width:calc(200px/6);
-      height: 10px;
-      font-size:7px;
-      font-style: bold;
-    }
-    .w {
-      background: white;
-    }
-    .b {
-      background: black;
-      color:#fff;
-    }
-  #total{
-    background-image: linear-gradient(transparent,black),url('Gooli.jpeg');
-      background-size: 300px 700px;
-    width: 300px;
-    height: 100vh;
-    overflow: hidden;
-    color: white;
-    margin: auto;
-    border:2px black solid;
-    z-index: auto;
-  }
-  #ctrl {
-    width: 30px;
-    height: 30px;
-    background: #40e421;
-    border: 20px solid #24b634;
+  #pnt {
+   width: 5px; 
+  height: 5px;
+    background: red;
+    box-shadow: 1px 1px 1px 5px red;
     position: absolute;
-    border-radius: 30px;
-    bottom: 50px;
-    left: 120px;
+    border-radius: 50px;
+   animation: sal 2s infinite;
+    display: none;
   }
-#ctrl:hover {
-  background:#24b634;
-  border: 20px solid #40e421;
+@keyframes sal {
+  50% {
+    box-shadow: none;
+  }
 }
-  #cle {
-    position: absolute;
-    background: none;
-    border: none;
-    top: 5px;
-    left: 5px;
-    color: white;
-    width: 10px;
-    height: 10px;
-  }
-    #sellvalue,#sjh {
-      margin: auto;
-    }
+button[command=close] {
+  width: 10px;
+  height: 10px;
+ position: absolute; 
+ top: 5px;
+  left: 5px;
+}
+#plus {
+  position:fixed;
+  top:40px;
+  left: 30px;
+  width: 50px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#winner {
+  width: 160px;
+  accent-color: gold;
+}
+#tagad {
+  width:300px;
+  position: fixed;
+  top: 100px;
+  left: 30px;
+  display: flex;
+  flex-flow: row-reverse;
+  gap: 5px;
+}
+label {
+  color:white;
+}
+#sell2,#sell3 {
+ width: 80px;
+height: 40px;
+border-radius: 20px;
+  background: green;
+  color: white;
+  position: relative;
+}
+#sell2 {
+  background: red;
+}
+#allitemsell {
+  width: 100%;
+  height: 100%;
+  background: blue;
+  color: white;
+  display:flex;
+  flex-flow: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+#sell1 {
+ width: 95vw;
+ height: 40vh; 
+}
   </style>
 </head>
 <body>
@@ -355,6 +307,7 @@ button[command = close]{
     <span id="coin">🪙</span>
     <span id="number">1000</span>
   </header>
+  <div id="plus"></div>
 <header id="settings">
 <button id="color" onclick="set1.showModal()">🎨</button>
 <button id="area" onclick="set2.showModal()" >  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -364,17 +317,16 @@ button[command = close]{
 </svg>
 </button>
 <button id="tadris" onclick="set3.showModal()">🏜</button>
-<button id="sibak">💰</button>
 </header> 
 </section>
   
   <dialog id="set1">
   <header id="chosec">
-    <button id="color1"><span>50🪙</span></button>
-    <button id="color2"><span>80🪙</span></button>
-    <button id="color3"><span>110🪙</span></button>
-    <button id="color4"><span>170🪙</span></button>
-    <button id="color5"><span>350🪙</span></button>
+    <button id="color1"><span>70🪙</span></button>
+    <button id="color2"><span>100🪙</span></button>
+    <button id="color3"><span>130🪙</span></button>
+    <button id="color4"><span>250🪙</span></button>
+    <button id="color5"><span>450🪙</span></button>
   </header>
   <button id="close" commandfor="set1" command="close">❌</button>  
   </dialog>
@@ -382,10 +334,10 @@ button[command = close]{
   <header id="areas">
     <button id="area1">↕️<br><span>250🪙</span></button>
     <button id="area2">↔️<br><span>500🪙</span></button>
-    <button id="area3">⬆️⬆️<br><span>950🪙</span></button>
-    <button id="area4">↔️↔️<br><span>1500🪙</span></button>
+    <button id="area3">⬆️⬆️<br><span>550🪙</span></button>
+    <button id="area4">↔️↔️<br><span>1200🪙</span></button>
   </header>
- <button id="lose" commandfor="set2" command="close">❌</button>   
+ <button id="close" commandfor="set2" command="close">❌</button>   
   </dialog>
   <dialog id="set3">
   <header id="etu">
@@ -396,39 +348,25 @@ button[command = close]{
   <button id="cose" commandfor="set3" command="close">❌</button>  
   </dialog>
 <dialog id="sell1">
+<header id="allitemsell">
 <div id="dgsll">
   <span id="digisell"></span><span>🪙</span>
 </div> 
   <input type="range" value = "1" max="2" min="1" id="sellvalue" step="0.05">
 <div id="sjh"></div>
-<header id="sells">
+<div id="sells">
   <button id="sell2" commandfor="sell1" command="close">قبول</button>
  <button id="sell3" command="close" commandfor="sell1">رفض</button>
+</div> 
 </header>
+
 </dialog>
-<dialog id="total">
-<section class="all"> 
-    <header id="winner">
-      <div id="pt1">0</div>
-      <div id="pt2">0</div>
-    </header>
-  <header id="race">
-    <div class="m" id="ff1"></div>
-    <div class="m" id="ff2"></div>
-    <header id="endline">
-    <div id="line1" class="w">f</div>
-    <div id="line2" class="b">i</div>
-    <div id="line3" class="w">n</div>
-    <div id="line4" class="b">i</div>
-    <div id="line5" class="w">s</div>
-    <div id="line6" class="b">h</div>    
-    </header>
-  </header>
-  <div id="ctrl"></div>
-</section>
-   <button id="cle">❌</button>   
-</dialog>
-<section id="all">
+<div id="tagad">
+  <label id="winM">1000/1M</label>
+  <progress id="winner" value="1000" max="1000000"></progress>
+</div>
+<small style="color:#fff;width:330px;text-align:center;font-size:12px;font-weight: 800; position:fixed;top:150px;left:15px;" id="sur"><span style="zoom:1.2;">😉</span>هناك سر صغير في اللعبة لن يكشفه الا العبقري</small>
+  <section id="all">
         <div id="hvr"></div>
      <div id="vtr"></div>
     <header id="house">
@@ -441,10 +379,37 @@ button[command = close]{
  <div class="hajr"></div>
 <div class="hajr"></div>
     </header>
+ <div id="pnt"></div>
 </section>
 <button id="sell">بيع</button>
 <script> 
-
+function varb(a) {
+ plus.innerText = a 
+if (plus.innerText[0] == "-") {
+  plus.style.color = "red"
+} else {
+  plus.style.color = "lightgreen"
+}
+setTimeout(()=>{
+  plus.innerText = ""
+},1000)
+}
+function win(a) {
+  winner.value = Number(winner.value)+a
+  winM.innerText = `${Number(winner.value)}/1M`
+if(Number(winner.value) >= 10**6){
+winner.max = 10**7 
+  winM.innerText = `${Number(winner.value)}/10M`
+}else if(Number(winner.value) >= 10**7 && Number(winner.value) <= 10**8){
+  winner.max = 10**8 
+  winM.innerText = `${Number(winner.value)}/100M`
+}else if(Number(winner.value) >= 10**8 && Number(winner.value) <= 10**9){
+  winner.max = 10**9
+  winM.innerText = `${Number(winner.value)}/1B`
+}else if (Number(winner.value) >= 10**9) {
+  tagad.style.display = "none"
+}
+}
 for (let index = 1; index < 13; index++) {
   vtr.innerHTML +=`<span class="cntr">${index}</span>`
 }
@@ -454,13 +419,17 @@ for (let index = -8; index < 9; index++) {
   let reward = Number(localStorage.getItem("reward")) || 0;
 if (reward > 0) {
   number.innerText = Number(number.innerText) + reward*10;
+  varb(`-${Number(number.innerText) + reward*10}`)
   localStorage.removeItem("reward");
 }
 p = 60
 m = 60
+let land = 20
 function colorf(a,b,c) {
     if (Number(number.innerHTML) >= a) {
       number.innerHTML = Number(number.innerHTML)-a
+      varb(`-${a}`)
+      win(-a)
       house.style.background = b
       house.style.color = c
     }
@@ -468,6 +437,8 @@ function colorf(a,b,c) {
   area1.addEventListener("click",()=>{
      if (Number(number.innerText) >= 250) {
        number.innerText = Number(number.innerText)-250
+       varb("-250")
+       win(-250)
        house.style.height=`${p+=15}px`
       ddd.innerHTML = `${((m/30)*(p/30)).toFixed(2)}m<sup><small>2</small></sup>`
      }
@@ -476,22 +447,28 @@ function colorf(a,b,c) {
   area2.addEventListener("click",()=>{
   if (Number(number.innerText) >= 500) {
     number.innerText = Number(number.innerText)-500
+    varb("-500")
+    win(-500)
     house.style.width=`${m+=30}px`
       ddd.innerHTML = `${((m/30)*(p/30)).toFixed(2)}m<sup><small>2</small></sup>`
   }
   })
   
   area3.addEventListener("click",()=>{
-    if (Number(number.innerText) >= 950) {
-       number.innerText = Number(number.innerText)-950
+    if (Number(number.innerText) >= 550) {
+       number.innerText = Number(number.innerText)-550
+      varb("-550")
+      win(-550)
        house.style.height=`${p+=30}px`
       ddd.innerHTML = `${((m/30)*(p/30)).toFixed(2)}m<sup><small>2</small></sup>`
      }
     
   })
   area4.addEventListener("click",()=>{
-    if (Number(number.innerText) >= 1500) {
-    number.innerText = Number(number.innerText)-1500
+    if (Number(number.innerText) >= 1200) {
+    number.innerText = Number(number.innerText)-1200
+      varb("-1200")
+      win(-1200)
     house.style.width=`${m+=60}px`
       ddd.innerHTML = `${((m/30)*(p/30)).toFixed(2)}m<sup><small>2</small></sup>`
     }    
@@ -501,7 +478,7 @@ function colorf(a,b,c) {
   color1.addEventListener("click",()=>{
     d1++
   if (d1 == 1) {
-    colorf(50,"yellow","black")
+    colorf(70,"yellow","black")
   }
     
   })
@@ -509,7 +486,7 @@ function colorf(a,b,c) {
   color2.addEventListener("click",()=>{
     d2++
   if (d2 == 1) {
-    colorf(80,"pink","black")
+    colorf(100,"pink","black")
   }
     
   })
@@ -517,7 +494,7 @@ function colorf(a,b,c) {
   color3.addEventListener("click",()=>{
     d3++
   if (d3 == 1) {
-    colorf(110,"red","white")
+    colorf(130,"red","white")
   }
    //   وردي 80،احمر 110،ابيض 170،بنفسجي 350  
   })
@@ -525,7 +502,7 @@ function colorf(a,b,c) {
   color4.addEventListener("click",()=>{
     d4++
   if (d4 == 1) {
-    colorf(170,"white","black")
+    colorf(250,"#42f12e","black")
   }
     
   })
@@ -533,14 +510,16 @@ function colorf(a,b,c) {
   color5.addEventListener("click",()=>{
     d5++
   if (d5 == 1) {
-    colorf(350,"purple","white")
+    colorf(450,"purple","white")
   }
   })
 btn1.addEventListener("click",()=>{
   if (Number(number.innerText) >= Number(c.innerText)) {
 
     number.innerText = Number(number.innerText)-Number(c.innerText)
-  
+    varb(`-${Number(c.innerText)}`)
+    win(-Number(c.innerText))
+  land = 40
    all.style.backgroundColor="#cab533" 
   } 
 })
@@ -548,7 +527,9 @@ btn1.addEventListener("click",()=>{
   if (Number(number.innerText) >= Number(dd.innerText)) {
 
     number.innerText = Number(number.innerText)-Number(dd.innerText)
-  
+    varb(`-${Number(dd.innerText)}`)
+    win(-Number(dd.innerText))
+ land = 60
    all.style.backgroundColor="#f8e571" 
   } 
 })
@@ -556,7 +537,9 @@ btn3.addEventListener("click",()=>{
   if (Number(number.innerText) >= Number(dc.innerText)) {
 
     number.innerText = Number(number.innerText)-Number(dc.innerText)
-  
+    varb(`-${Number(dc.innerText)}`)
+    win(-Number(dc.innerText))
+  land = 100
    all.style.backgroundColor="#37b020" 
   } 
 })
@@ -573,7 +556,7 @@ else if(house.style.background == "pink"){
 else if(house.style.background == "red") {
   digisell.innerText =Math.round(m*p*0.3*1.5)
       digisell.innerText = Number(digisell.innerText)-document.querySelectorAll(".hajr").length*50
-}else if(house.style.background == "white"){
+}else if(house.style.background == "#42f12e"){
   digisell.innerText =Math.round(m*p*0.3*1.9)
       digisell.innerText = Number(digisell.innerText)-document.querySelectorAll(".hajr").length*50
 }
@@ -592,7 +575,7 @@ sellvalue.oninput=()=>{
   if (m == 60 && p == 60) {
     digisell.innerText= 0
   } else {
-    digisell.innerText = (base*sellvalue.value).toFixed(2)
+    digisell.innerText = Math.round(base*sellvalue.value)
   if (sellvalue.value >= 1.75) {
     digisell.style.color = "red"
     sellvalue.style.accentColor="red"
@@ -601,13 +584,14 @@ sellvalue.oninput=()=>{
     Mathra = Math.random()*2
 if(Mathra <= 1.75 && Mathra >= 1 ){
       sellvalue.value = Mathra.toFixed(2)
-      digisell.innerText = (base*sellvalue.value).toFixed(2)
+      digisell.innerText = Math.round(base*sellvalue.value)
       sellvalue.disabled = true
 }
     sell2.style.pointerEvents = "none"
     },1000)
     setTimeout(()=>{
       clearInterval(setint)
+    sjh.innerHTML="<small><span>☺️</span>هذا سعر مناسب لي هل تقبله</small>"
      sell2.style.pointerEvents = "auto" 
     },5000)
   }else {
@@ -621,12 +605,16 @@ if(Mathra <= 1.75 && Mathra >= 1 ){
 sell3.onclick = ()=>{
   sellvalue.disabled = false
   sellvalue.value = 1
+  sjh.innerText = ""
 }
 
 sell2.onclick =()=>{
 sellvalue.disabled = false
 sellvalue.value = 1
+sjh.innerText = ""
 number.innerText = Number(number.innerText)+Number(digisell.innerText) 
+varb(`+${Number(digisell.innerText)}`)
+win(Number(digisell.innerText))
 m = 60
 p = 60
 d1 = d2 = d3 = d4 = d5 = 0
@@ -642,6 +630,8 @@ hajr.forEach(hjr =>{
   hjr.onclick=()=>{
     if (Number(number.innerText) >= 10) {
       number.innerText = Number(number.innerText)-10
+      varb("-10")
+      win(-10)
       house.removeChild(hjr)
 
     }
@@ -702,66 +692,27 @@ hajr.forEach(hjr =>{
   hjr.onclick=()=>{
     if (Number(number.innerText) >= 10) {
       number.innerText = Number(number.innerText)-10
+      varb("-10")
+      win(-10)
       house.removeChild(hjr)
 
     }
   }
 })
-  const ff1 = document.getElementById("ff1");
-   ff2=document.getElementById("ff2")
-   name1 = document.getElementById("name1");
-   name2=document.getElementById("name2")
-let diff=Number(pt1.innerHTML)-Number(pt2.innerHTML)
-  
-sibak.addEventListener("click",()=>{
-  
-total.showModal()
-let  currentTop = 0
-       setff=setInterval(()=>{
-      currentTop+=10
-      ff2.style.top = currentTop + "px";
-     pt2.innerHTML++
-     if(Number(pt2.innerHTML) >= 88){
-       ff2.style.top = "0px"
-       ff1.style.top = "0px"
-       pt2.innerText = pt1.innerText = currentTop = currentTop2 = 0
-     }
-    },500);
-let  currentTop2 = 0
-    ctrl.onclick=() => {
-      // نقرأ القيمة الحالية للـ top
-      currentTop2+=10
-      // نزيدها بمقدار 1px
-      ff1.style.top = currentTop2 + "px";
-      pt1.innerHTML++
-      if(Number(pt1.innerHTML) >= 88){
-        number.innerText = Number(number.innerText)+(Number(pt1.innerText)-Number(pt2.innerText))*10
-       pt2.innerText = pt1.innerText = currentTop = currentTop2 = 0
-      ff2.style.top = "0px"
-      ff1.style.top = "0px"
-      }
-    }
-})
-  let setff
-  cle.addEventListener("click",()=>{
-    
-    clearInterval(setff)
-    setff = null
-    total.close()
-    ff1.style.top = "0px"
-  ff2.style.top = "0px"
-   pt2.innerText = pt1.innerText = currentTop = currentTop2 = 0 
-  })
-document.querySelectorAll('[id]').forEach(ids =>{
-  console.log(ids.id + "/"+ "tag:" + ids.tagName)
-})
-console.log(document.querySelectorAll('[id]').length)
-console.log("------++++++++")
-document.querySelectorAll('[class]').forEach(cls => {
-  console.log(cls.className+"/"+"tag:"+ cls.tagName)
-})
-console.log(document.querySelectorAll('[class]').length)
+
+setInterval(()=>{
+ rand = Math.random()
+ pnt.style.display = "block" 
+  pnt.style.top = `${Math.random()*400}px`
+  pnt.style.left = `${Math.random()*350}px`
+pnt.onclick = ()=>{
+  sur.innerHTML = "لقد كشفته ايها العبقري لم اتوقع ذلك"
+  number.innerText = Number(number.innerText)+Math.round(rand*land)
+  varb(`+${Math.round(rand*land)}`)
+  win(Math.round(rand*land))
+}
+},1000)
+
 </script>
-  
 </body>
-</html>
+  </html>
